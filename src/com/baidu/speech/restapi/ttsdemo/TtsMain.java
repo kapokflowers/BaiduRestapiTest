@@ -19,12 +19,12 @@ public class TtsMain {
 
     public static void main(String[] args) throws IOException, DemoException {
         // txt 文件所在目录
-        String fileDir = "C:\\dev\\baidutest\\";
+        String fileDir = "/Users/gongmw/Documents/baiduTest/";
         // txt 文件名称
         String fileName = "test.txt";
         List<String> stringList = FileUtil.readToList(fileDir+fileName);
         // 为每一个 txt 文件生成语音文件
-        for(int i = 0; i < stringList.Size(); i++){
+        for(int i = 0; i < stringList.size(); i++){
             (new TtsMain()).run(i+1, stringList.get(i), fileDir);
         }
     }
@@ -90,7 +90,7 @@ public class TtsMain {
             // 获取语音内容格式
             String format = getFormat(aue);
             // 设置保存文件位置
-            File file = new File(saveDir+location"."+format); // 打开mp3文件即可播放
+            File file = new File(saveDir+location+"."+format); // 打开mp3文件即可播放
             // System.out.println( file.getAbsolutePath());
             // 获取语音输出流
             FileOutputStream os = new FileOutputStream(file);
